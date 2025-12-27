@@ -1,11 +1,3 @@
-/**
- * Simple Write.
- *
- * Check if the mouse is over a rectangle and writes the status to the serial port.
- * This example works with the Wiring / Arduino program that follows below.
- */
-
-
 import processing.serial.*;
 
 Serial myPort;  // Create object from Serial class
@@ -26,9 +18,8 @@ void setup()
 }
 
 void draw() {
-  // Draw a square
-
-
+  background(255);
+  
   if (mousePressed) {
     if (mouseButton == LEFT) {
       oneLeft();
@@ -41,6 +32,9 @@ void draw() {
   rect(50, 50, 100, 100);
 
   myPort.write(str(angle) + "\n");
+  
+  fill(220, 100, 0);
+  text(angle, 20, 20);
 }
 
 
